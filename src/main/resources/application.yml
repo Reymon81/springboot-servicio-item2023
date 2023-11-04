@@ -1,0 +1,2 @@
+listarProductos: ${env.micro.productos}/listar
+listarProducto: ${env.micro.productos}/mostrar/{id}

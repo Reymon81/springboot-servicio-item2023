@@ -14,4 +14,8 @@ public class Item {
     private Product product;
 
     private int amount;
+
+    public Double getTotal(){
+        return product.getPrice() * amount;
+    }
 }
