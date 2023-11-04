@@ -17,6 +17,7 @@ import java.util.Objects;
 public class ItemController {
 
     @Autowired
+    @Qualifier("serviceFeign")
     private ItemService service;
 
     @GetMapping("/item/listar")
