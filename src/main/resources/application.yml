@@ -1,2 +1,3 @@
-listarProductos: ${env.micro.productos}/listar
-listarProducto: ${env.micro.productos}/mostrar/{id}
+listarProductos: ${env.micro.productos}/productos/listar
+listarProducto: ${env.micro.productos}/productos/mostrar/{id}
+urlMicroProducto: ${env.micro.productos}

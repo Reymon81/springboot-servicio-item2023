@@ -2,6 +2,8 @@ package com.springboot.app.item.web;
 
 import com.springboot.app.item.models.Item;
 import com.springboot.app.item.service.ItemService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +16,8 @@ import java.util.Objects;
 @RestController
 public class ItemController {
 
-    private final ItemService service;
-
-    public ItemController(ItemService service) {
-        this.service = service;
-    }
+    @Autowired
+    private ItemService service;
 
     @GetMapping("/item/listar")
     ResponseEntity<List<Item>> getItemList(){
@@ -28,6 +27,7 @@ public class ItemController {
         return(Objects.nonNull(response))
                 ? new ResponseEntity<>(response, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
     }
 
     @GetMapping("/item/id/{id}/amount/{amount}")
